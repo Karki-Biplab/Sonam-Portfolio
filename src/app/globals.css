@@ -1,26 +1,111 @@
-@import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Dark Theme with Grey Primary */
+    --background: 220 25% 10%; /* Very Dark Desaturated Blue */
+    --foreground: 210 20% 90%; /* Light Grey/Off-white */
+
+    --card: 220 25% 15%; /* Slightly Lighter Dark Blue for cards */
+    --card-foreground: 210 20% 90%; /* Light Grey/Off-white */
+
+    --popover: 220 25% 12%; /* Dark Popover */
+    --popover-foreground: 210 20% 90%; /* Light Grey/Off-white */
+
+    --primary: 220 15% 70%;  /* Medium-Light Grey */
+    --primary-foreground: 220 25% 10%; /* Dark Text on Primary */
+
+    --secondary: 220 20% 30%; /* Muted Dark Blue */
+    --secondary-foreground: 210 20% 85%; /* Lighter Text on Secondary */
+
+    --muted: 220 15% 25%;   /* Muted Darker Blue */
+    --muted-foreground: 210 15% 65%; /* Medium-Light Grey for muted text */
+
+    --accent: 45 100% 67%; /* #FFDB58 - Mustard Yellow */
+    --accent-foreground: 220 25% 10%; /* Dark text on Accent for contrast */
+
+    --destructive: 0 70% 55%; /* A slightly brighter red for dark mode */
+    --destructive-foreground: 0 0% 98%; /* Light text on destructive */
+
+    --border: 220 25% 25%; /* Dark Border */
+    --input: 220 25% 20%; /* Dark Input Background */
+    --ring: 220 15% 80%; /* Lighter Grey for Ring, based on new primary */
+
+    --chart-1: 220 15% 70%; /* Grey, matching new Primary */
+    --chart-2: 45 100% 67%; /* Mustard Yellow */
+    --chart-3: 210 70% 60%; /* Cool Blue - kept, can be distinct */
+    --chart-4: 30 90% 65%;  /* Orange/Warm Accent */
+    --chart-5: 150 60% 55%; /* Teal/Green Accent */
+    --radius: 0.5rem;
+
+    /* Sidebar variables for Dark Theme */
+    --sidebar-background: 220 25% 12%; /* Slightly different dark for sidebar */
+    --sidebar-foreground: 210 20% 88%;
+    --sidebar-primary: 220 15% 75%; /* Sidebar primary slightly lighter grey */
+    --sidebar-primary-foreground: 220 25% 8%; /* Dark text on sidebar primary */
+    --sidebar-accent: 220 20% 25%; 
+    --sidebar-accent-foreground: 210 20% 92%;
+    --sidebar-border: 220 25% 22%;
+    --sidebar-ring: 220 15% 85%; /* Sidebar ring lighter grey */
+  }
+
+  .dark {
+    /* Ensure .dark class also uses the new dark theme variables */
+    --background: 220 25% 10%;
+    --foreground: 210 20% 90%;
+    --card: 220 25% 15%;
+    --card-foreground: 210 20% 90%;
+    --popover: 220 25% 12%;
+    --popover-foreground: 210 20% 90%;
+    --primary: 220 15% 70%; /* Medium-Light Grey */
+    --primary-foreground: 220 25% 10%;
+    --secondary: 220 20% 30%;
+    --secondary-foreground: 210 20% 85%;
+    --muted: 220 15% 25%;
+    --muted-foreground: 210 15% 65%;
+    --accent: 45 100% 67%;
+    --accent-foreground: 220 25% 10%;
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 25% 25%;
+    --input: 220 25% 20%;
+    --ring: 220 15% 80%; /* Lighter Grey for Ring */
+
+    --chart-1: 220 15% 70%; /* Grey */
+    --chart-2: 45 100% 67%;
+    --chart-3: 210 70% 60%;
+    --chart-4: 30 90% 65%;
+    --chart-5: 150 60% 55%;
+
+    --sidebar-background: 220 25% 12%;
+    --sidebar-foreground: 210 20% 88%;
+    --sidebar-primary: 220 15% 75%;
+    --sidebar-primary-foreground: 220 25% 8%;
+    --sidebar-accent: 220 20% 25%;
+    --sidebar-accent-foreground: 210 20% 92%;
+    --sidebar-border: 220 25% 22%;
+    --sidebar-ring: 220 15% 85%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    @apply font-body;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline;
+  }
 }
