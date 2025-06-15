@@ -63,7 +63,7 @@ export default function ContactSection() {
               name="name" 
               id="name" 
               required 
-              className="bg-background text-foreground border-border placeholder:text-muted-foreground focus:ring-accent focus:border-accent" 
+              className="bg-background text-foreground placeholder:text-muted-foreground focus:ring-accent focus:border-accent" 
               // Adjusted classes for light theme: input fields are on primary bg, so should have light text on dark inputs, or dark text on light inputs.
               // The input fields themselves are on `bg-primary text-primary-foreground`. So their internal BG should be contrasting.
               // Let's make input fields use standard background/foreground from the theme.
@@ -80,7 +80,7 @@ export default function ContactSection() {
               name="email" 
               id="email" 
               required 
-              className="bg-background text-foreground border-border placeholder:text-muted-foreground focus:ring-accent focus:border-accent"
+              className="bg-background text-foreground  placeholder:text-muted-foreground focus:ring-accent focus:border-accent"
               placeholder="you@example.com"
               value={formData.email}
               onChange={handleChange}
@@ -93,7 +93,7 @@ export default function ContactSection() {
               id="message" 
               rows="4" 
               required 
-              className="bg-background text-foreground border-border placeholder:text-muted-foreground focus:ring-accent focus:border-accent min-h-[120px]"
+              className="bg-background text-foreground  placeholder:text-muted-foreground focus:ring-accent focus:border-accent min-h-[120px]"
               placeholder="Your message..."
               value={formData.message}
               onChange={handleChange}

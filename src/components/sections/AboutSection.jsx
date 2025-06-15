@@ -23,7 +23,7 @@ export default function AboutSection() {
             transition={{ duration: 0.7, delay: 0.2 }}
           >
             <Image 
-              src="https://source.unsplash.com/random/600x800?professional,portrait"
+              src="/next.svg"
               alt={PERSONAL_INFO.name} 
               layout="fill" 
               objectFit="cover"
